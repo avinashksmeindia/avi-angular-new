@@ -1,1 +1,30 @@
-<p>This is the about view.</p>
+<div class="jumbotron">
+  <h2>About Us</h2>
+</div>
+<div class="container team-container">
+  <div class="row">
+    <h2>Our Team</h2>
+    <button class="btn btn-warning" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">
+        Previous
+    </button>
+    {{currentPage+1}}/{{numberOfPages()}}
+    <button class="btn btn-warning" ng-disabled="currentPage >= data.length/pageSize - 1" ng-click="currentPage=currentPage+1">
+        Next
+    </button>
+    <br/>
+    <br/>
+    <form class="form-search">
+      <div class="form-group">
+        <input type="text" ng-model="search" class="search-query form-control" placeholder="Enter Name to search..." />
+      </div>
+      <br/>
+      <ul class="team">
+        <li class="col-md-4 col-sm-4 col-xs-12" ng-animate="'animate'" ng-repeat="thing in awesomeThings | filter:search  | startFrom:currentPage*pageSize | limitTo:pageSize">
+          <img class="img-responsive" src="{{thing.photo}}?text={{thing.name}}" alt="" />
+          <h2>Name: {{thing.name}}</h2>
+          <p>Age: {{thing.age}}</p>
+        </li>
+      </ul>
+    </form>
+  </div>
+</div>

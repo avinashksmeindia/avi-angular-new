@@ -1,0 +1,21 @@
+.footer{
+  background: #eaeaea;
+  padding: 10px 0px;
+  margin: 10px 0px;
+  .footer-nav{
+    text-align: center;
+    li{
+      display: inline-block;
+      a{
+        padding: 10px;
+        text-transform: uppercase;
+      }
+    }
+    .active{
+      a{
+        background: red;
+        color: #FFF;
+      }
+    }
+  }
+}

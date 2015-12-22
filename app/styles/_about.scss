@@ -1,0 +1,15 @@
+.team-container{
+  text-align: center;
+  .team{
+    li{
+      h2{
+        font-size: 12px;
+      }
+      img{
+        margin: 0px auto;
+        border-radius: 50%;
+        border: 2px solid #eaeaea;
+      }
+    }
+  }
+}
